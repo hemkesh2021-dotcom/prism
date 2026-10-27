@@ -421,3 +421,10 @@ establish real-world reliability anyway. See `evaluation/README.md`.
    owner; open a source chip to see the turn.
 9. **(2:45) Export and privacy.** **Download report** (transcript excluded by default), then **Clear
    session**. "Live mode uses one configured model on the server; the key never reaches the browser."
+
+## License
+
+Code: [MIT](LICENSE) © 2026 Hemkesh R.
+Evaluation transcripts in `evaluation/` are synthetic and written for this project.
+Real meeting data (AMI, ICSI, Parliament of Canada via QMSum) is not included in this repository;
+if you use it, cite the source corpora (AMI and ICSI are CC BY 4.0).
