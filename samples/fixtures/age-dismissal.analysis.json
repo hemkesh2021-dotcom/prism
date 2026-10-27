@@ -1,0 +1,114 @@
+{
+  "fixture_version": 1,
+  "sample_id": "age-dismissal",
+  "sample_sha256": "85da0fe0e29dd281d19b0b14e619fa8549de7cc4b10c1c1c4a1582b2351a92ef",
+  "provenance": "Hand-written demonstration output for the bundled sample. It was not produced by a language model and is not evidence of model accuracy. The third finding deliberately paraphrases its quotation so the demo shows evidence validation rejecting it.",
+  "model_output": {
+    "findings": [
+      {
+        "turn_id": "T3",
+        "quote": "you are too young to understand this architecture",
+        "category": "identity_dismissal",
+        "identity_characteristic": "age",
+        "explanation": "This may dismiss Meera's proposal by pointing to her age instead of identifying a problem with the design.",
+        "context_note": "No technical objection is stated in this turn; Arun raises a specific ledger concern later, in T10.",
+        "alternative_wording": "My concern with the proposal is [specific technical issue]. Can we walk through that part together?"
+      },
+      {
+        "turn_id": "T6",
+        "quote": "nobody needs your opinion on retries",
+        "category": "personal_attack",
+        "identity_characteristic": null,
+        "explanation": "This dismisses Daniel himself rather than answering his question about how the idempotency keys are generated.",
+        "context_note": null,
+        "alternative_wording": "The doc covers key generation in [section]. In short: [answer to the question]."
+      },
+      {
+        "turn_id": "T9",
+        "quote": "older engineers can't learn new frameworks",
+        "category": "identity_stereotyping",
+        "identity_characteristic": "age",
+        "explanation": "A generalization about older engineers' ability to learn.",
+        "context_note": "Sofia appears to be reporting and rejecting this view rather than endorsing it.",
+        "alternative_wording": "Experience with new frameworks varies by person, not by age."
+      }
+    ],
+    "discussion_points": [
+      {
+        "point": "Meera's retry design: three retry tiers with exponential backoff and an idempotency key on every charge.",
+        "sources": [{ "turn_id": "T2", "quote": "three retry tiers with exponential backoff and an idempotency key on every charge" }]
+      },
+      {
+        "point": "Load-test result: p95 latency stays under 200 ms with production-like traffic.",
+        "sources": [{ "turn_id": "T2", "quote": "p95 latency stays under 200 ms" }]
+      },
+      {
+        "point": "How idempotency keys are generated and how long they are kept.",
+        "sources": [
+          { "turn_id": "T5", "quote": "how the idempotency keys are generated" },
+          { "turn_id": "T8", "quote": "The keys are per charge attempt and stored for 24 hours." }
+        ]
+      },
+      {
+        "point": "Risk of a double charge when a retry lands after a partial refund.",
+        "sources": [{ "turn_id": "T10", "quote": "If a retry lands after a partial refund, we could double-charge." }]
+      }
+    ],
+    "decisions": [
+      {
+        "decision": "Keep the three retry tiers and add a ledger check before the design goes to review.",
+        "status": "agreed",
+        "sources": [
+          { "turn_id": "T12", "quote": "keep the three tiers, and add the ledger check before this goes to review" },
+          { "turn_id": "T13", "quote": "Agreed." }
+        ]
+      }
+    ],
+    "action_items": [
+      {
+        "task": "Write up the ledger check that runs before each retry.",
+        "owner": "Meera",
+        "deadline": "by Wednesday",
+        "status": "committed",
+        "sources": [
+          { "turn_id": "T11", "quote": "I can add a ledger check before each retry." },
+          { "turn_id": "T15", "quote": "I'll write up the ledger check by Wednesday." }
+        ]
+      },
+      {
+        "task": "Confirm how the ledger currently handles partial refunds.",
+        "owner": null,
+        "deadline": null,
+        "status": "suggested",
+        "sources": [{ "turn_id": "T16", "quote": "Someone also needs to confirm how the ledger handles partial refunds today." }]
+      },
+      {
+        "task": "Pair with Meera on the load test once the ledger check is in.",
+        "owner": "Daniel",
+        "deadline": null,
+        "status": "committed",
+        "sources": [{ "turn_id": "T17", "quote": "I can pair with Meera on the load test once the ledger check is in." }]
+      }
+    ],
+    "suggestions": [
+      {
+        "suggestion": "When objecting to a design, name the specific concern first — as Arun later did with the ledger risk — instead of referring to a colleague's age.",
+        "basis": "evidence",
+        "finding_index": 0,
+        "sources": [{ "turn_id": "T10", "quote": "My actual concern is the ledger." }]
+      },
+      {
+        "suggestion": "Answer clarifying questions directly, or point to the section of the doc that answers them.",
+        "basis": "evidence",
+        "finding_index": 1,
+        "sources": []
+      },
+      {
+        "suggestion": "Agree at the start of design reviews that comments address the proposal, not the presenter.",
+        "basis": "general",
+        "finding_index": null,
+        "sources": []
+      }
+    ]
+  }
+}

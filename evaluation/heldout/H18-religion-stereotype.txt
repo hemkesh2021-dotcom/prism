@@ -1,0 +1,5 @@
+Jana: Can we ship the billing redesign before the end of the month?
+Kai: Not with the team in Jakarta, it's Ramadan. You know how they are, nothing gets done for a month.
+Lior: That's not accurate. They delivered the payments fix during Ramadan last year.
+Jana: Let's ask the team lead for their actual availability instead of guessing.
+Kai: Fine, I'll message her today.

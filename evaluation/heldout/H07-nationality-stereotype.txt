@@ -1,0 +1,6 @@
+Elena: The vendor's integration is two weeks late.
+Farid: Typical. That Italian team never documents anything.
+Elena: Their last delivery was documented fine. The delay is on our API keys.
+Farid: Still, I'd keep an eye on them.
+Gus: I'll chase the API keys today so they're unblocked.
+Elena: Thanks. Let's check in again on Friday.

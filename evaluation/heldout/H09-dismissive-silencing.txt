@@ -1,0 +1,6 @@
+Irene: For the roadmap, I think we should put accessibility fixes before new features.
+Jonas: Irene, your opinion doesn't count here. Just close your tickets.
+Karim: Hold on. Irene's point is in our compliance requirements.
+Irene: The audit is in March, so the timing matters.
+Jonas: Fine, put it on the list.
+Karim: I'll add an accessibility epic with Irene as the owner.

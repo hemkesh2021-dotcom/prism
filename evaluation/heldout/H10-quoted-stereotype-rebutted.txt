@@ -1,0 +1,5 @@
+Lucia: When I joined, a director told me women don't make good infrastructure leads.
+That was nonsense then and it's nonsense now. Anyway, I'd like to lead the storage migration.
+Marco: You'd be great for it. You designed the current replication setup.
+Nina: Agreed. Lucia leads, and I'll support on the networking side.
+Marco: Let's write up the plan by next Wednesday.

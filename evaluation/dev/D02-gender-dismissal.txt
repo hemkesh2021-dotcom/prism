@@ -1,0 +1,5 @@
+Paul: We need a lead for the data platform rewrite.
+Rina: I'd like to lead it. I wrote the original ingestion service.
+Paul: I'd rather have a man in charge of something this technical.
+Sara: Rina is the most qualified person here.
+Paul: Fine, let's discuss it with the director.

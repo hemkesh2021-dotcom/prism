@@ -1,0 +1,12 @@
+[project]
+name = "prism-backend"
+version = "1.0.0"
+description = "PRISM — Meeting Communication & Bias Analyzer (FastAPI backend)"
+requires-python = ">=3.10"
+readme = "../README.md"
+
+[tool.pytest.ini_options]
+pythonpath = ["."]
+testpaths = ["tests"]
+addopts = "-q"
+filterwarnings = ["error::DeprecationWarning:prism.*"]

@@ -1,0 +1,5 @@
+Uma: The forecast model overestimates Q3 by about twelve percent.
+Victor: I'm not saying Wen is wrong because she's new here. I'm saying the seasonality term looks off.
+Wen: That's fair. I used three years of data, and one of them was the pandemic year.
+Victor: That would explain it. Can you rerun without 2020?
+Wen: Yes, I'll share the rerun tomorrow.

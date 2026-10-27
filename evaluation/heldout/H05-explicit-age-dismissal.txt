@@ -1,0 +1,7 @@
+Ruth: Next item is the Kubernetes migration. Walter, you had concerns?
+Walter: Honestly, I'm not sure this team can run it.
+Nadia: I've drafted the rollout plan and tested it on the staging cluster.
+Walter: Nadia, at your age you've never seen a real outage. Let's leave this to people who have.
+Nadia: I've been on call for two years. What part of the plan worries you?
+Ruth: Let's go through the plan step by step.
+Walter: Fine. My main worry is the database failover.

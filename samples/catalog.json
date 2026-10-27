@@ -1,0 +1,25 @@
+{
+  "samples": [
+    {
+      "id": "neutral-planning",
+      "title": "Neutral planning",
+      "description": "Sprint planning with owners, deadlines and one open question.",
+      "file": "neutral-planning.txt",
+      "fixture": "fixtures/neutral-planning.analysis.json"
+    },
+    {
+      "id": "technical-disagreement",
+      "title": "Technical disagreement",
+      "description": "A firm but respectful architecture debate settled by agreeing to benchmark.",
+      "file": "technical-disagreement.txt",
+      "fixture": "fixtures/technical-disagreement.analysis.json"
+    },
+    {
+      "id": "age-dismissal",
+      "title": "Potential age-based dismissal",
+      "description": "A design review with a remark about a presenter's age and a dismissive reply.",
+      "file": "age-dismissal.txt",
+      "fixture": "fixtures/age-dismissal.analysis.json"
+    }
+  ]
+}

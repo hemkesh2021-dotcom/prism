@@ -1,0 +1,7 @@
+Lea: Retro time. What went well this sprint?
+Max: The deploy pipeline was fast and stable.
+Noor: Code reviews were quicker after we split the PRs.
+Lea: What should we change?
+Max: Too many meetings on Wednesdays.
+Noor: Agreed. Let's move the design sync to Thursday.
+Lea: I'll update the calendar invite.

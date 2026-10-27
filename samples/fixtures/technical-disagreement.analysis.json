@@ -1,0 +1,101 @@
+{
+  "fixture_version": 1,
+  "sample_id": "technical-disagreement",
+  "sample_sha256": "25d8492b2d56a8ae2d1d88023b8d04b8253137df4e18d90e8eccab8a520a72c6",
+  "provenance": "Hand-written demonstration output for the bundled sample. It was not produced by a language model and is not evidence of model accuracy.",
+  "model_output": {
+    "findings": [],
+    "discussion_points": [
+      {
+        "point": "Whether a write-through cache suits the order-history workload, given that writes spike during sales.",
+        "sources": [
+          { "turn_id": "T2", "quote": "I think the write-through cache is the wrong call for this workload." },
+          { "turn_id": "T4", "quote": "during sales the write rate spikes" }
+        ]
+      },
+      {
+        "point": "Risks raised: database latency under load and cache invalidation, which caused last quarter's incident.",
+        "sources": [
+          { "turn_id": "T4", "quote": "This approach may increase database latency under load." },
+          { "turn_id": "T6", "quote": "my worry is cache invalidation" }
+        ]
+      },
+      {
+        "point": "Trade-off of a short TTL: less staleness but a lower hit rate.",
+        "sources": [{ "turn_id": "T8", "quote": "A short TTL helps with staleness, but the hit rate drops." }]
+      },
+      {
+        "point": "The benchmark should replay sale-day traffic rather than average traffic.",
+        "sources": [{ "turn_id": "T10", "quote": "The benchmark should replay the sale-day traffic, not average traffic." }]
+      }
+    ],
+    "decisions": [
+      {
+        "decision": "No cache change ships until the benchmark is reviewed.",
+        "status": "agreed",
+        "sources": [
+          { "turn_id": "T14", "quote": "no cache change ships until the benchmark is reviewed" },
+          { "turn_id": "T15", "quote": "Fine by me." },
+          { "turn_id": "T16", "quote": "Agreed." }
+        ]
+      },
+      {
+        "decision": "Start with a read-through cache and a short TTL.",
+        "status": "proposed",
+        "sources": [{ "turn_id": "T7", "quote": "I'd rather start with a read-through cache and a short TTL." }]
+      },
+      {
+        "decision": "Revisit caching in the architecture review on the 14th.",
+        "status": "agreed",
+        "sources": [{ "turn_id": "T17", "quote": "We'll revisit in the architecture review on the 14th." }]
+      }
+    ],
+    "action_items": [
+      {
+        "task": "Build the sale-day traffic replay harness.",
+        "owner": "Meera",
+        "deadline": null,
+        "status": "committed",
+        "sources": [{ "turn_id": "T11", "quote": "I can build the replay harness." }]
+      },
+      {
+        "task": "Export the sale-day logs with customer identifiers removed.",
+        "owner": "Kavya",
+        "deadline": "by Tuesday",
+        "status": "committed",
+        "sources": [{ "turn_id": "T12", "quote": "I'll export the logs by Tuesday, with customer identifiers removed." }]
+      },
+      {
+        "task": "Review the harness design before the benchmark runs.",
+        "owner": "Arun",
+        "deadline": null,
+        "status": "committed",
+        "sources": [{ "turn_id": "T13", "quote": "I'll review the harness design before it runs." }]
+      },
+      {
+        "task": "Document the existing cache invalidation rules in one place.",
+        "owner": null,
+        "deadline": null,
+        "status": "suggested",
+        "sources": [{ "turn_id": "T18", "quote": "Can someone also document the invalidation rules we already have?" }]
+      }
+    ],
+    "suggestions": [
+      {
+        "suggestion": "Assign an owner for documenting the invalidation rules before the review on the 14th.",
+        "basis": "evidence",
+        "finding_index": null,
+        "sources": [
+          { "turn_id": "T18", "quote": "Can someone also document the invalidation rules we already have?" },
+          { "turn_id": "T19", "quote": "Let's note that as open for now." }
+        ]
+      },
+      {
+        "suggestion": "Keep tying objections to explicit workload assumptions; it turns a disagreement into something a benchmark can settle.",
+        "basis": "general",
+        "finding_index": null,
+        "sources": []
+      }
+    ]
+  }
+}

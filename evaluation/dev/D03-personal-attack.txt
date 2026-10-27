@@ -1,0 +1,4 @@
+Tess: The test suite takes forty minutes now.
+Umar: Then stop writing such bloated tests, Tess. You clearly don't know what you're doing.
+Vik: Let's profile the suite before blaming anyone.
+Tess: I'll share the slowest twenty tests.

@@ -1,0 +1,8 @@
+Kofi: I think this schema is a mistake. A JSON blob for orders will hurt us at reporting time.
+Lena: I disagree. We need the flexibility while the product is still changing.
+Kofi: Flexibility now, pain later. Every report becomes a full scan.
+Lena: Then let's index the three fields reporting actually uses.
+Kofi: That's a fair compromise, but I want a migration plan if it doesn't hold up.
+Mateo: Can we prototype both and compare query times on last month's data?
+Lena: Fine by me. I'll set up the JSON version.
+Kofi: I'll do the normalized one. Let's compare on Thursday.

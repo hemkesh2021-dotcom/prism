@@ -1,0 +1,6 @@
+Priyanka: I've run this service for six years, and I don't think the cache is the problem.
+Sam: The traces show 80% of latency in the cache layer, though.
+Priyanka: Those traces were taken during the deploy window. Can you re-run them at a normal hour?
+Sam: Sure. If it still points to the cache, will you look at my patch?
+Priyanka: Yes. If the numbers hold up, we'll ship your patch.
+Tom: I can help Sam set up the trace job tonight.

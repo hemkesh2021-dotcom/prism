@@ -1,0 +1,4 @@
+# Test-only dependencies (regenerate with: uv pip compile --universal requirements-dev.in -o requirements-dev.txt).
+-r requirements.in
+pytest==9.1.1
+httpx==0.28.1

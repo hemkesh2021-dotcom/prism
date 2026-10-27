@@ -1,0 +1,6 @@
+Hannah: Any questions on the new release process?
+Ravi: Do we still need two approvals for hotfixes?
+Leo: Seriously, Ravi? Only someone clueless would ask that. It's in the doc.
+Hannah: It's a reasonable question. Yes, hotfixes still need two approvals.
+Ravi: Thanks. I'll update the checklist.
+Leo: Whatever. Can we move on?

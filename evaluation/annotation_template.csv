@@ -1,0 +1,4 @@
+transcript_id,turn_id,category,identity_characteristic,status,quote,annotator,notes
+H05-explicit-age-dismissal,T4,identity_dismissal,age,required,"at your age you've never seen a real outage",A1,Dismisses Nadia's plan by pointing to her age
+H14-ambiguous-teasing,T2,personal_attack,,optional,"Says the guy who still prints his emails, grandpa.",A1,Peer teasing; reviewers may disagree
+H10-quoted-stereotype-rebutted,,,,none,,A1,Quoted stereotype is explicitly rejected by the speaker: no finding

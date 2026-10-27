@@ -1,0 +1,331 @@
+@import "tailwindcss";
+@import "@fontsource-variable/manrope";
+
+/* ------------------------------------------------------------------------- *
+ * PRISM design tokens
+ * Warm porcelain ground, graphite ink, restrained teal for actions and focus.
+ * Depth carries meaning: raised = things you act on and primary results;
+ * inset = source text and evidence; flat = lists and supporting detail.
+ * ------------------------------------------------------------------------- */
+@theme {
+  --font-sans: "Manrope Variable", "Manrope", ui-sans-serif, system-ui, -apple-system, "Segoe UI", sans-serif;
+  --font-mono: ui-monospace, "SF Mono", "Cascadia Mono", "Segoe UI Mono", Menlo, Consolas, monospace;
+
+  --color-porcelain: #f5f4ef;
+  --color-porcelain-deep: #ecebe4;
+  --color-porcelain-shade: #e0ddd3;
+  --color-surface: #ffffff;
+  --color-surface-warm: #fbfaf7;
+
+  --color-ink: #182422;
+  --color-ink-2: #596662;
+  --color-ink-3: #6f7a76;
+  --color-line: #d8d5cb;
+  --color-line-strong: #b9b6ab;
+
+  --color-teal: #176d63;
+  --color-teal-strong: #0f554d;
+  --color-teal-soft: #e2f1ec;
+  --color-mint: #b9e6d6;
+
+  /* Identity-related concerns */
+  --color-amber: #d9952a;
+  --color-amber-ink: #85570b;
+  --color-amber-soft: #fbedd5;
+  --color-amber-mark: #f6d9a4;
+
+  /* Personal attack or dismissive communication */
+  --color-slate: #4d5c6b;
+  --color-slate-soft: #e5e9ee;
+  --color-slate-mark: #ccd5df;
+
+  /* System errors (never used for findings) */
+  --color-brick: #9a3b2c;
+  --color-brick-soft: #f7e5e0;
+
+  /* Speakers: fixed order, validated (adjacent pairs; first four all-pairs). Slot 7+ folds to neutral. */
+  --color-speaker-1: #2f59ab;
+  --color-speaker-2: #5d9222;
+  --color-speaker-3: #ac3a75;
+  --color-speaker-4: #2096c0;
+  --color-speaker-5: #774cbc;
+  --color-speaker-6: #cd677d;
+  --color-speaker-other: #6b7470;
+
+  --radius-panel: 22px;
+  --radius-well: 16px;
+  --radius-control: 12px;
+
+  --shadow-raised: inset 0 1px 0 rgb(255 255 255 / 0.9), -6px -6px 16px rgb(255 255 255 / 0.75),
+    8px 10px 24px rgb(76 66 46 / 0.09), 1px 2px 4px rgb(76 66 46 / 0.06);
+  --shadow-raised-lg: inset 0 1px 0 rgb(255 255 255 / 0.95), -10px -10px 26px rgb(255 255 255 / 0.8),
+    14px 18px 40px rgb(76 66 46 / 0.11), 2px 3px 6px rgb(76 66 46 / 0.06);
+  --shadow-control: -3px -3px 8px rgb(255 255 255 / 0.85), 4px 5px 12px rgb(76 66 46 / 0.1),
+    0 1px 2px rgb(76 66 46 / 0.08);
+  --shadow-inset: inset 2px 2px 6px rgb(76 66 46 / 0.1), inset -2px -2px 6px rgb(255 255 255 / 0.85);
+  --shadow-pressed: inset 2px 3px 6px rgb(76 66 46 / 0.15), inset -2px -2px 5px rgb(255 255 255 / 0.7);
+
+  --ease-out-soft: cubic-bezier(0.22, 1, 0.36, 1);
+  --ease-in-out-soft: cubic-bezier(0.65, 0, 0.35, 1);
+}
+
+@layer base {
+  html {
+    color-scheme: light;
+    -webkit-text-size-adjust: 100%;
+    text-rendering: optimizeLegibility;
+  }
+  body {
+    margin: 0;
+    /* A broad, soft light from the upper left gives the porcelain ground some depth. */
+    background:
+      radial-gradient(1400px 720px at 12% -8%, rgb(255 255 255 / 0.6), transparent 62%),
+      var(--color-porcelain);
+    color: var(--color-ink);
+    font-family: var(--font-sans);
+    font-size: 15px;
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+    /* No ligatures: Manrope would draw "--" or "->" as single glyphs, which misrepresents quoted
+       transcript text and commands. */
+    font-variant-ligatures: no-common-ligatures no-contextual;
+    overflow-x: hidden;
+  }
+  ::selection {
+    background: var(--color-mint);
+    color: var(--color-ink);
+  }
+  h1,
+  h2,
+  h3,
+  h4 {
+    text-wrap: balance;
+  }
+  p,
+  li,
+  blockquote,
+  dd {
+    text-wrap: pretty;
+  }
+  :focus-visible {
+    outline: 2px solid var(--color-teal);
+    outline-offset: 3px;
+    border-radius: 10px;
+  }
+  button,
+  [role="tab"],
+  [role="menuitemradio"],
+  [role="option"] {
+    -webkit-tap-highlight-color: transparent;
+  }
+  input,
+  textarea,
+  button,
+  select {
+    font: inherit;
+    color: inherit;
+  }
+}
+
+@layer components {
+  /* Raised surfaces are lit from above: a faint top-to-bottom falloff plus a crisp top edge. */
+  .panel {
+    background: linear-gradient(180deg, #fdfcf9 0%, var(--color-surface-warm) 42%, #f8f7f2 100%);
+    border-radius: var(--radius-panel);
+    box-shadow: var(--shadow-raised);
+    border: 1px solid rgb(255 255 255 / 0.65);
+  }
+  .panel-lg {
+    background: linear-gradient(180deg, #fdfcf9 0%, var(--color-surface-warm) 42%, #f8f7f2 100%);
+    border-radius: var(--radius-panel);
+    box-shadow: var(--shadow-raised-lg);
+    border: 1px solid rgb(255 255 255 / 0.65);
+  }
+  .well {
+    background: var(--color-porcelain-deep);
+    border-radius: var(--radius-well);
+    box-shadow: var(--shadow-inset);
+    border: 1px solid rgb(24 36 34 / 0.07);
+  }
+  .tnum {
+    font-variant-numeric: tabular-nums;
+  }
+  .turn-id {
+    font-family: var(--font-mono);
+    font-size: 12px;
+    letter-spacing: 0.01em;
+    color: var(--color-ink-2);
+  }
+}
+
+/* Highlighted evidence. The sweep animates only when motion is allowed. */
+.evidence-mark {
+  border-radius: 4px;
+  padding: 0.05em 0.1em;
+  margin: 0 -0.1em;
+  color: inherit;
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  box-decoration-break: clone;
+  -webkit-box-decoration-break: clone;
+}
+.evidence-mark[data-tone="identity"] {
+  background-image: linear-gradient(var(--color-amber-mark), var(--color-amber-mark));
+  box-shadow: inset 0 -2px 0 var(--color-amber);
+}
+.evidence-mark[data-tone="personal"] {
+  background-image: linear-gradient(var(--color-slate-mark), var(--color-slate-mark));
+  box-shadow: none;
+  text-decoration: underline dashed var(--color-slate) 2px;
+  text-underline-offset: 4px;
+}
+.evidence-mark[data-tone="source"] {
+  background-image: linear-gradient(var(--color-mint), var(--color-mint));
+  box-shadow: inset 0 -2px 0 var(--color-teal);
+}
+html[data-motion="full"] .evidence-mark[data-animate="true"] {
+  animation: evidence-sweep 520ms var(--ease-out-soft) both;
+}
+@keyframes evidence-sweep {
+  from {
+    background-size: 0% 100%;
+  }
+  to {
+    background-size: 100% 100%;
+  }
+}
+
+/* Placeholder tokens inside generated alternatives, e.g. [specific technical issue] */
+.placeholder-token {
+  border-radius: 6px;
+  padding: 0 0.3em;
+  border: 1px dashed var(--color-line-strong);
+  background: var(--color-surface);
+  color: var(--color-ink-2);
+  font-style: italic;
+}
+
+/* Lens fallback drift. Each ring is its own layer, so this runs on the compositor.
+   Static when motion is reduced. */
+html[data-motion="full"] .lens-fallback-ring {
+  animation: lens-drift 18s linear infinite;
+  transform-origin: 50% 50%;
+  will-change: transform;
+}
+html[data-motion="full"] .lens-fallback-ring.reverse {
+  animation-direction: reverse;
+  animation-duration: 24s;
+}
+html[data-motion="full"] .lens-fallback-ring.slow {
+  animation-duration: 32s;
+}
+@keyframes lens-drift {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+html[data-motion="reduced"] *,
+html[data-motion="reduced"] *::before,
+html[data-motion="reduced"] *::after {
+  scroll-behavior: auto !important;
+}
+/* The in-app "Reduced" setting also stills spinners (the OS setting is handled by motion-safe:). */
+html[data-motion="reduced"] .animate-spin {
+  animation: none;
+}
+
+@media (forced-colors: active) {
+  .evidence-mark {
+    forced-color-adjust: none;
+    background: Mark;
+    color: MarkText;
+  }
+  .panel,
+  .panel-lg,
+  .well {
+    border: 1px solid CanvasText;
+  }
+}
+
+/* Dialog and menu transitions (Radix data-state). Reduced motion keeps short fades only. */
+.dialog-overlay[data-state="open"] {
+  animation: prism-fade-in 220ms var(--ease-out-soft);
+}
+.dialog-overlay[data-state="closed"] {
+  animation: prism-fade-out 150ms ease-in;
+}
+.dialog-content[data-state="open"] {
+  animation: prism-dialog-in 280ms var(--ease-out-soft);
+}
+.dialog-content[data-state="closed"] {
+  animation: prism-dialog-out 150ms ease-in;
+}
+.menu-content[data-state="open"] {
+  transform-origin: var(--radix-dropdown-menu-content-transform-origin);
+  animation: prism-menu-in 200ms var(--ease-out-soft);
+}
+html[data-motion="reduced"] .dialog-content[data-state="open"],
+html[data-motion="reduced"] .menu-content[data-state="open"] {
+  animation: prism-fade-in 140ms linear;
+}
+html[data-motion="reduced"] .dialog-content[data-state="closed"] {
+  animation: prism-fade-out 120ms linear;
+}
+@keyframes prism-fade-in {
+  from {
+    opacity: 0;
+  }
+}
+@keyframes prism-fade-out {
+  to {
+    opacity: 0;
+  }
+}
+@keyframes prism-dialog-in {
+  from {
+    opacity: 0;
+    transform: translateY(10px) scale(0.985);
+  }
+}
+@keyframes prism-dialog-out {
+  to {
+    opacity: 0;
+    transform: translateY(6px) scale(0.99);
+  }
+}
+@keyframes prism-menu-in {
+  from {
+    opacity: 0;
+    transform: translateY(-4px) scale(0.98);
+  }
+}
+
+.lens-fallback[data-paused="true"] .lens-fallback-ring {
+  animation-play-state: paused !important;
+}
+
+/* Primary action: a tactile teal key, lit from above, that presses in. */
+.btn-primary {
+  background: linear-gradient(180deg, #1e7a6f 0%, var(--color-teal) 58%, #135f56 100%);
+  box-shadow: inset 0 1px 0 rgb(255 255 255 / 0.18), 0 1px 2px rgb(15 85 77 / 0.28), 4px 7px 16px rgb(23 109 99 / 0.2),
+    -3px -3px 8px rgb(255 255 255 / 0.75);
+}
+.btn-primary:hover:not(:disabled) {
+  background: linear-gradient(180deg, #1a7267 0%, var(--color-teal-strong) 100%);
+}
+.btn-primary:active:not(:disabled):not([aria-disabled="true"]) {
+  box-shadow: inset 2px 3px 6px rgb(8 52 47 / 0.35), inset -1px -1px 2px rgb(255 255 255 / 0.08);
+}
+.btn-primary:disabled {
+  background: var(--color-ink-3);
+  box-shadow: none;
+}
+
+/* Subtle press feedback for buttons (150–250 ms control transitions). */
+.press:not(:disabled):not([aria-disabled="true"]):active {
+  transform: scale(0.97);
+}
+html[data-motion="reduced"] .press:not(:disabled):active {
+  transform: none;
+}

@@ -1,0 +1,120 @@
+{
+  "fixture_version": 1,
+  "sample_id": "neutral-planning",
+  "sample_sha256": "653aab3e812bf46206b5ad623ad37e158565878583b00306ade61893b1dd7c9b",
+  "provenance": "Hand-written demonstration output for the bundled sample. It was not produced by a language model and is not evidence of model accuracy.",
+  "model_output": {
+    "findings": [],
+    "discussion_points": [
+      {
+        "point": "Scope of the onboarding sprint: new sign-up screens behind a feature flag, with the permissions step simplified to a single card.",
+        "sources": [
+          { "turn_id": "T1", "quote": "lock the scope for the onboarding sprint and agree on owners" },
+          { "turn_id": "T4", "quote": "I simplified the permissions step to a single card." }
+        ]
+      },
+      {
+        "point": "Release gating: the flag stays off in production until the regression suite passes and QA signs off.",
+        "sources": [
+          { "turn_id": "T6", "quote": "I'd like the flag to stay off in production until the regression suite passes." }
+        ]
+      },
+      {
+        "point": "Whether to track onboarding completion per step (better drop-off data, three extra events) or only at the end.",
+        "sources": [
+          { "turn_id": "T14", "quote": "do we track completion per step or only at the end?" },
+          { "turn_id": "T15", "quote": "Per step gives us better drop-off data, but it's three extra events." }
+        ]
+      }
+    ],
+    "decisions": [
+      {
+        "decision": "The onboarding flag stays off in production until Lin signs off.",
+        "status": "agreed",
+        "sources": [
+          { "turn_id": "T7", "quote": "The flag stays off in production until Lin signs off." }
+        ]
+      },
+      {
+        "decision": "Track completion per step, pending confirmation with analytics on Monday.",
+        "status": "proposed",
+        "sources": [
+          { "turn_id": "T17", "quote": "Let's propose per-step tracking and confirm with analytics on Monday before we commit." }
+        ]
+      },
+      {
+        "decision": "Demo the full onboarding flow next Friday.",
+        "status": "agreed",
+        "sources": [
+          { "turn_id": "T19", "quote": "Let's aim to demo the full flow next Friday." },
+          { "turn_id": "T20", "quote": "Works for me." },
+          { "turn_id": "T21", "quote": "Same here." }
+        ]
+      }
+    ],
+    "action_items": [
+      {
+        "task": "Put the onboarding-state endpoint on staging.",
+        "owner": "Tomás",
+        "deadline": "by Thursday",
+        "status": "committed",
+        "sources": [{ "turn_id": "T9", "quote": "I'll have the endpoint on staging by Thursday." }]
+      },
+      {
+        "task": "Implement the onboarding screens on iOS and share a build with Lin.",
+        "owner": "Daniel",
+        "deadline": "early next week",
+        "status": "committed",
+        "sources": [
+          { "turn_id": "T10", "quote": "Daniel, can you take the iOS implementation?" },
+          { "turn_id": "T11", "quote": "Yes, I'll take it. I should have a build for Lin early next week." }
+        ]
+      },
+      {
+        "task": "Prepare the empty states and error copy.",
+        "owner": "Farah",
+        "deadline": "by Wednesday",
+        "status": "committed",
+        "sources": [{ "turn_id": "T12", "quote": "I'll prepare the empty states and error copy by Wednesday." }]
+      },
+      {
+        "task": "Update the regression checklist with the new onboarding cases.",
+        "owner": "Lin",
+        "deadline": null,
+        "status": "committed",
+        "sources": [{ "turn_id": "T13", "quote": "I'll update the regression checklist with the new onboarding cases." }]
+      },
+      {
+        "task": "Confirm per-step tracking with analytics.",
+        "owner": null,
+        "deadline": "on Monday",
+        "status": "suggested",
+        "sources": [{ "turn_id": "T17", "quote": "confirm with analytics on Monday" }]
+      },
+      {
+        "task": "Check that the existing analytics events still fire after the redesign.",
+        "owner": null,
+        "deadline": null,
+        "status": "suggested",
+        "sources": [{ "turn_id": "T18", "quote": "Someone should also check that the existing analytics events still fire after the redesign." }]
+      }
+    ],
+    "suggestions": [
+      {
+        "suggestion": "Name an owner for the analytics-event check and the analytics confirmation so neither depends on “someone”.",
+        "basis": "evidence",
+        "finding_index": null,
+        "sources": [
+          { "turn_id": "T18", "quote": "Someone should also check" },
+          { "turn_id": "T17", "quote": "confirm with analytics on Monday" }
+        ]
+      },
+      {
+        "suggestion": "Close planning meetings by reading back each owner and date so everyone leaves with the same list.",
+        "basis": "general",
+        "finding_index": null,
+        "sources": []
+      }
+    ]
+  }
+}

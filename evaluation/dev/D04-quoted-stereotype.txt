@@ -1,0 +1,4 @@
+Wade: A recruiter once told me older developers can't keep up with new frameworks.
+I think that's wrong, and our best React engineer is in her fifties.
+Xena: Agreed. Let's focus the hiring rubric on skills, not assumptions.
+Yuri: I'll draft the rubric changes this week.

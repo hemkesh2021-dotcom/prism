@@ -1,0 +1,5 @@
+# Keep sample and evaluation transcripts byte-identical across platforms: demo fixtures
+# are bound to the SHA-256 of the canonical sample text.
+*.txt text eol=lf
+*.json text eol=lf
+*.md text eol=lf

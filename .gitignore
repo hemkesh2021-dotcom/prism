@@ -1,0 +1,28 @@
+# Secrets and local configuration
+.env
+.env.*
+!.env.example
+
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+.pytest_cache/
+
+# Node / build output
+node_modules/
+frontend/dist/
+*.tsbuildinfo
+
+# Evaluation runs (model outputs) and anything users upload or export
+evaluation/runs/
+uploads/
+*.report.md
+prism-report-*.md
+
+# OS / editor
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/

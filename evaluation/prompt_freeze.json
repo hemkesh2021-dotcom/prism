@@ -1,0 +1,9 @@
+{
+  "prompt_version": "analysis-v1.0",
+  "prompt_file": "backend/prism/prompts/analysis_v1.md",
+  "prompt_sha256": "8f73f01bb63b50fd36093822b7a9c030f1cfdbb16b9f2a821789caa395351c0e",
+  "instructions_sha256": "ef95c6522e26fd2ef7a38626f964650ca43b50e292a8795771bb749e6ac62ce4",
+  "instructions_cover": "system prompt file, output JSON schema including field descriptions, user-message wrapper, repair note",
+  "frozen_on": "2026-10-26",
+  "rule": "The held-out set may only be evaluated with these exact instructions. Changing any of them requires a new PROMPT_VERSION and a new freeze record; results from different versions are not comparable."
+}

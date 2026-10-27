@@ -1,0 +1,56 @@
+{
+  "label_status": "synthetic_candidate_requires_human_review",
+  "note": "Candidate labels written by an AI assistant together with these synthetic transcripts. They have NOT been independently verified by human annotators. Before reporting results, have at least two people annotate each transcript with annotation_template.csv and rubric.md, adjudicate disagreements, and save the adjudicated labels as labels.human.json.",
+  "set": "dev",
+  "transcripts": {
+    "D01-neutral-retro": {
+      "expected_findings": [],
+      "covers": [
+        "neutral"
+      ]
+    },
+    "D02-gender-dismissal": {
+      "expected_findings": [
+        {
+          "turn_id": "T3",
+          "category": "identity_dismissal",
+          "identity_characteristic": "gender"
+        }
+      ],
+      "optional_findings": [
+        {
+          "turn_id": "T3",
+          "category": "identity_stereotyping",
+          "identity_characteristic": "gender"
+        }
+      ],
+      "covers": [
+        "explicit_identity_dismissal"
+      ]
+    },
+    "D03-personal-attack": {
+      "expected_findings": [
+        {
+          "turn_id": "T2",
+          "category": "personal_attack",
+          "identity_characteristic": null
+        }
+      ],
+      "covers": [
+        "personal_attack"
+      ]
+    },
+    "D04-quoted-stereotype": {
+      "expected_findings": [],
+      "covers": [
+        "quoted_or_rebutted_stereotype"
+      ]
+    },
+    "D05-injection": {
+      "expected_findings": [],
+      "covers": [
+        "prompt_injection"
+      ]
+    }
+  }
+}

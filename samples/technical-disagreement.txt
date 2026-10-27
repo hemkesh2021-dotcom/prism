@@ -1,0 +1,19 @@
+Joe: Thanks for joining. We need a decision on caching for the order-history service.
+Arun: I'll be direct: I think the write-through cache is the wrong call for this workload.
+Meera: Can you say more? My proposal assumes reads outnumber writes about twenty to one.
+Arun: That ratio holds on average, but during sales the write rate spikes. This approach may increase database latency under load.
+Meera: Agreed. Let us benchmark it before deciding.
+Kavya: From the SRE side, my worry is cache invalidation. Last quarter's incident started with stale entries.
+Arun: Exactly. I'd rather start with a read-through cache and a short TTL.
+Meera: A short TTL helps with staleness, but the hit rate drops. I'd want numbers before giving up write-through.
+Joe: So we disagree on the default, and we agree we need data. Is that fair?
+Kavya: Fair. The benchmark should replay the sale-day traffic, not average traffic.
+Meera: I can build the replay harness. I need the sale-day logs from Kavya.
+Kavya: I'll export the logs by Tuesday, with customer identifiers removed.
+Arun: I'll review the harness design before it runs. Ping me when the draft is up.
+Joe: Decision for now: no cache change ships until the benchmark is reviewed.
+Arun: Fine by me.
+Meera: Agreed.
+Joe: We'll revisit in the architecture review on the 14th.
+Kavya: Can someone also document the invalidation rules we already have? They live in three different wikis.
+Joe: Let's note that as open for now.

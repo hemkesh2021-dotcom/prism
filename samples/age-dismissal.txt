@@ -1,0 +1,18 @@
+Sofia: Let's start. Meera is presenting the retry design for the payments service.
+Meera: Thanks. The proposal adds three retry tiers with exponential backoff and an idempotency key on every charge.
+I’ve load-tested it 🔁 with production-like traffic, and p95 latency stays under 200 ms.
+Arun: Meera, you are too young to understand this architecture. We designed the original system before you joined.
+Meera: Could you explain which part of my proposal is incorrect?
+Daniel: Can I ask how the idempotency keys are generated? Are they per request or per order?
+Arun: Daniel, if you had read the doc you wouldn't need to ask. Honestly, nobody needs your opinion on retries.
+Sofia: Let's keep this about the design. Daniel's question is a fair one.
+Meera: The keys are per charge attempt and stored for 24 hours. That covers the longest retry window.
+Sofia: People keep saying older engineers can't pick up new frameworks, and that has never matched my experience. Arun has shipped more Kotlin than any of us.
+Arun: My actual concern is the ledger. If a retry lands after a partial refund, we could double-charge.
+Meera: That's a real gap. I can add a ledger check before each retry.
+Sofia: Good. So the decision is: keep the three tiers, and add the ledger check before this goes to review.
+Daniel: Agreed.
+Arun: Fine.
+Meera: I'll write up the ledger check by Wednesday.
+Sofia: Someone also needs to confirm how the ledger handles partial refunds today.
+Daniel: I can pair with Meera on the load test once the ledger check is in.

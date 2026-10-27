@@ -1,0 +1,8 @@
+Grace: We need to decide on the launch checklist today.
+Hiro: The landing page copy still needs a final read.
+Grace: Agreed. Someone should also confirm the pricing table with finance.
+Ivan: And the support macros need updating before launch.
+Hiro: We should probably test the signup flow on older Android phones too.
+Grace: Let's aim to launch on the 3rd if those are done.
+Ivan: The 3rd works if the macros are ready by Monday.
+Grace: Okay. Let's take the rest offline.

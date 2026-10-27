@@ -1,0 +1,22 @@
+Priya: Morning, everyone. Goal for today: lock the scope for the onboarding sprint and agree on owners.
+Daniel: Before we start: the new sign-up screen is already behind a feature flag in the beta build.
+Priya: Great. Farah, where are the designs?
+Farah: The final screens are in the shared file. I simplified the permissions step to a single card.
+It now asks for notifications only after the first lesson is finished.
+Tomás: That helps the backend too. We only need one new endpoint for the onboarding state.
+Lin: For QA, I'd like the flag to stay off in production until the regression suite passes.
+Priya: Agreed. The flag stays off in production until Lin signs off.
+Daniel: I can wire the screens to Tomás's endpoint once it's on staging.
+Tomás: I'll have the endpoint on staging by Thursday.
+Priya: Thanks. Daniel, can you take the iOS implementation?
+Daniel: Yes, I'll take it. I should have a build for Lin early next week.
+Farah: I'll prepare the empty states and error copy by Wednesday.
+Lin: I'll update the regression checklist with the new onboarding cases.
+Priya: One open question: do we track completion per step or only at the end?
+Tomás: Per step gives us better drop-off data, but it's three extra events.
+Farah: I'd lean toward per step. We keep guessing where people give up.
+Priya: Let's propose per-step tracking and confirm with analytics on Monday before we commit.
+Lin: Someone should also check that the existing analytics events still fire after the redesign.
+Priya: Good point. Let's aim to demo the full flow next Friday.
+Daniel: Works for me.
+Tomás: Same here.

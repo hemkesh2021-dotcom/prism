@@ -1,0 +1,7 @@
+Ana: Morning. Quick round, please: yesterday, today, blockers.
+Ben: Yesterday I finished the CSV export. Today I'm on the date-filter bug. No blockers.
+Chloe: I reviewed Ben's export PR and left two comments. Today: the onboarding emails.
+Dev: I'm still waiting on the staging database credentials.
+Ana: I'll ping infra about the credentials right after this.
+Dev: Thanks. Until then I'll write the migration tests locally.
+Ana: Great. Anything else? No? Let's wrap up.
